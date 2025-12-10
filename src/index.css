@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@theme {
+  /* Dark Theme Base Colors */
+  --color-brand-dark: var(--theme-bg, #0a0a0f);
+  --color-brand-darker: var(--theme-bg, #050507);
+  --color-brand-primary: var(--theme-primary, #a855f7);
+  --color-brand-secondary: var(--theme-secondary, #6366f1);
+  --color-brand-accent: var(--theme-accent, #22d3ee);
+  --color-brand-gold: #fbbf24;
+  --color-brand-text: var(--theme-text, #f1f5f9);
+  --color-brand-muted: var(--theme-text-muted, #64748b);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+@keyframes gradient-shift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-30px) rotate(3deg);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-subtle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--theme-primary, #a855f7), var(--theme-secondary, #6366f1), var(--theme-accent, #22d3ee));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 40px rgba(168, 85, 247, 0.5), 0 0 80px rgba(99, 102, 241, 0.3);
+  }
+
+  .glass {
+    background: var(--theme-surface, rgba(255, 255, 255, 0.03));
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.08));
+  }
+
+  .glass-strong {
+    background: var(--theme-surface-hover, rgba(255, 255, 255, 0.08));
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--theme-border-hover, rgba(255, 255, 255, 0.15));
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--theme-bg, #0a0a0f), var(--theme-bg, #0a0a0f)) padding-box,
+      linear-gradient(135deg, rgba(168, 85, 247, 0.5), rgba(99, 102, 241, 0.3), rgba(34, 211, 238, 0.2)) border-box;
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 30s linear infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(168, 85, 247, 0.3);
+  }
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--theme-bg, #0a0a0f);
+  color: var(--theme-text, #f1f5f9);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-bg, #0a0a0f);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--theme-primary, #a855f7), var(--theme-secondary, #6366f1));
+  border-radius: 4px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(168, 85, 247, 0.4);
+  color: white;
+}
+
+/* Light theme specific overrides */
+[data-theme="light"] {
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .text-glow-purple {
+  text-shadow: none;
+}
+
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .glass-strong {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.15);
+}
