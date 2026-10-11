@@ -1,16 +1,54 @@
-# React + Vite
+# Tech Impact 🌍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/totorubianto/tech-impact)
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
 
-Currently, two official plugins are available:
+> An open-source digital impact platform providing accessible tools, automation bridges, and technical infrastructure for community organizations, grassroots initiatives, and educational programs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Mission & Purpose
+Many community organizations, non-profits, and educational groups lack the resources to license expensive enterprise software. **Tech Impact** provides a modular, lightweight, and modern digital platform that enables grassroots initiatives to:
+- 📊 Track community reach and program impact metrics transparently.
+- ⚡ Automate routine community communication and volunteer onboarding.
+- 📱 Deliver fast, accessible, offline-tolerant web applications for users in low-bandwidth regions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Key Modules & Architecture
+- **Impact Showcase Engine**: Interactive visualization for non-profit and community program milestones.
+- **Volunteer & Program Dispatch**: Automated workflows connecting community participants with operational coordinators.
+- **Accessible & Low-Bandwidth UI**: Built with React and modern CSS architecture to guarantee ultra-fast loading across older mobile devices.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 💻 Tech Stack
+- **Frontend**: React 19, Vite, Tailwind CSS, Framer Motion
+- **Tooling & Linter**: ESLint 9, PostCSS
+- **Runtime & Deployment**: Static Edge Distribution (Vercel / Cloudflare Pages)
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/totorubianto/tech-impact.git
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+---
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! We actively encourage external contributors to help bridge the digital divide for community organizations.
+
+---
+
+## 📄 License
+This project is open-source under the [MIT License](LICENSE).
